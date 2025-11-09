@@ -28,8 +28,7 @@ To get started with this project, follow these steps:
    # or
    yarn start
    ```
-
-4. The server will start on port `8001`.
+   The node server will be running on port `8001`.
 
 ## Docker Support
 
@@ -44,15 +43,6 @@ Run the server in a containerized environment:
    ```bash
    docker run -p 8001:8001 anythink-node-server
    ```
-
-## Development
-
-The server provides basic routing and middleware setup using Express.js. Key features include:
-
-- Basic routing setup
-- Static file serving
-- Error handling middleware
-- CORS support
 
 ## Migration from Python Server
 
