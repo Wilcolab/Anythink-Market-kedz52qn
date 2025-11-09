@@ -4,7 +4,7 @@ FROM node:14
 WORKDIR /app
 
 # Copy package.json and yarn.lock files
-COPY package*.json /app
+COPY package.json /app
 
 # Install dependencies
 RUN yarn install

@@ -1,8 +1,0 @@
-node_modules
-npm-debug.log
-Dockerfile
-.dockerignore
-README.md
-src/index.js
-package.json
-nodemon.json
