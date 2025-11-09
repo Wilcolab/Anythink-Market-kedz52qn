@@ -1,39 +1,43 @@
-# Python Server
+# Node Server (migrated from Python)
 
-This project contains a FastAPI server implemented in Python. It provides two routes for managing a task list.
+This project has been migrated from Python to Node.js, maintaining the exact same functionality as the original implementation. The service provides basic task management endpoints and persists data using the same data model.
 
-## Project Structure
+## Project Structure 
 
-The project has the following files and directories:
-
-- `python-server/src/main.py`: This file contains the implementation of the FastAPI server with two routes. It handles adding a task to a list and retrieving the list.
-
-- `python-server/src/__init__.py`: This file is an empty file that marks the `src` directory as a Python package.
-
-- `python-server/requirements.txt`: This file lists the dependencies required for the FastAPI server and other dependencies.
-
-- `python-server/Dockerfile`: This file is used to build a Docker image for the FastAPI server. It specifies the base image, copies the source code into the image, installs the dependencies, and sets the command to run the server.
-
-- `docker-compose.yml`: This file is used to define and run multi-container Docker applications. It specifies the services to run, their configurations, and any dependencies between them.
-
-## Getting Started
-
-To run the FastAPI server using Docker, follow these steps:
-
-- Build and start the Docker containers by running the following command:
-
-  ```shell
-  docker compose up
-  ```
-
-  This command will build the Docker image for the FastAPI server and start the containers defined in the `docker-compose.yml` file.
-
-- The FastAPI server should now be running. You can access at port `8000`.
+The Node.js implementation is located in the `node-server` directory, replacing the previous Python FastAPI server. The Python implementation has been preserved in the `python-server` directory for reference.
 
 ## API Routes
 
-The FastAPI server provides the following API routes:
+The Node server maintains feature parity with the original Python implementation:
 
-- `POST /tasks`: Adds a task to the task list. The request body should contain the task details.
+- `POST /tasks`
+  - Creates a new task
+  - Request body: `{ "title": "Task name" }`
+  - Returns the created task
 
-- `GET /tasks`: Retrieves the task list.
+- `GET /tasks`
+  - Returns the list of all tasks
+
+Example usage:
+```shell
+curl -X POST http://localhost:8000/tasks -H "Content-Type: application/json" -d '{"title":"Buy milk"}'
+curl http://localhost:8000/tasks
+```
+
+## Getting Started
+
+Run the server using Docker Compose:
+
+```shell
+docker compose up --build
+```
+
+The server will be available at `http://localhost:8000` (or the port specified in your docker-compose.yml).
+
+## Migration Notes
+
+- This is a like-for-like migration from Python to Node.js
+- No changes were made to the API contract or functionality
+- Both implementations use the same data model for tasks
+- The Python implementation remains available for reference
+
