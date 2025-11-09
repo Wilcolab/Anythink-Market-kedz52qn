@@ -94,7 +94,61 @@ describe('Arithmetic', function () {
     });
 
 // TODO: Challenge #1
- 
+// Generate Tests for the Power Operation
+    describe('Power', function () {
+        it('raises a positive integer to a positive integer power', function (done) {
+            request.get('/arithmetic?operation=power&operand1=2&operand2=3')
+                .expect(200)
+                .end(function (err, res) {
+                    expect(res.body).to.eql({ result: 8 });
+                    done();
+                });
+        });
+        it('raises a positive integer to the zero power', function (done) {
+            request.get('/arithmetic?operation=power&operand1=5&operand2=0')
+                .expect(200)
+                .end(function (err, res) {              
+                    expect(res.body).to.eql({ result: 1 });
+                    done();
+                });
+        });
+        // Add test for negative exponent
+        it('raises a positive integer to a negative integer power', function (done) {
+            request.get('/arithmetic?operation=power&operand1=2&operand2=-2')
+                .expect(200)
+                .end(function (err, res) {              
+                    expect(res.body).to.eql({ result: 0.25 });
+                    done();
+                });
+        });
+        // Add test for zero base and positive exponent
+        it('raises zero to a positive integer power', function (done) {
+            request.get('/arithmetic?operation=power&operand1=0&operand2=3')
+                .expect(200)
+                .end(function (err, res) {              
+                    expect(res.body).to.eql({ result: 0 });
+                    done();
+                });
+        });
+        // Add test for zero base and zero exponent
+        it('raises zero to the zero power', function (done) {
+            request.get('/arithmetic?operation=power&operand1=0&operand2=0')
+                .expect(200)
+                .end(function (err, res) {              
+                    expect(res.body).to.eql({ result: 1 });
+                    done();
+                });
+        });
+        // Add test for negative base and postive exponent
+        it('raises a negative integer to a positive integer power', function (done) {
+            request.get('/arithmetic?operation=power&operand1=-2&operand2=3')
+                .expect(200)
+                .end(function (err, res) {              
+                    expect(res.body).to.eql({ result: -8 });
+                    done();
+                });
+        });
+    });
 
     describe('Multiplication', function () {
         it('multiplies two positive integers', function (done) {
