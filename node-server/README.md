@@ -1,44 +1,66 @@
 # Node Server
 
-This is a simple Express server project that listens on port 8001. 
+This is the Node.js implementation of the Anythink Market backend. The server runs on Express.js and listens on port 8001.
+
+## Technical Stack
+
+- **Runtime**: Node.js 16+
+- **Framework**: Express.js
 
 ## Getting Started
 
 To get started with this project, follow these steps:
 
-1. **Clone the repository** (if applicable):
-   ```
-   git clone <repository-url>
-   cd node-server
-   ```
+1. **Prerequisites**:
+   - Node.js 16 or higher
+   - npm or yarn package manager
 
 2. **Install dependencies**:
-   ```
+   ```bash
+   npm install
+   # or
    yarn install
    ```
 
 3. **Run the server**:
-   ```
+   ```bash
+   npm start
+   # or
    yarn start
    ```
 
-The server will start and listen on port 8001. You can make changes to the code, and nodemon will automatically reload the server for you.
+The server will start on port 8001.
 
-## Docker
+## Docker Support
 
-To run the server in a Docker container, you can build the Docker image and run it using the following commands:
+Run the server in a containerized environment:
 
-1. **Build the Docker image**:
-   ```
-   docker build -t node-server .
-   ```
-
-2. **Run the Docker container**:
-   ```
-   docker run -p 8001:8001 node-server
+1. **Build the image**:
+   ```bash
+   docker build -t anythink-node-server .
    ```
 
-The server will be accessible at `http://localhost:8001`.
+2. **Run the container**:
+   ```bash
+   docker run -p 8001:8001 anythink-node-server
+   ```
+
+## Development
+
+The server provides basic routing and middleware setup using Express.js. Key features include:
+
+- Basic routing setup
+- Static file serving
+- Error handling middleware
+- CORS support
+
+## Migration from Python Server
+
+This Node.js implementation represents a complete rewrite of the original Python backend. Key differences include:
+
+- **Framework Change**: Moved from Flask to Express.js
+- **Performance**: Native async/await support in Node.js for better handling of concurrent requests
+- **Development Experience**: Hot-reloading support for faster development cycles
 
 ## License
 
