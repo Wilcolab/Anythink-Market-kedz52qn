@@ -1,6 +1,6 @@
 # Node Server
 
-This is the Node.js implementation of the Anythink Market backend. The server runs on Express.js and listens on port 8001.
+This is the Node.js implementation of the Anythink Market backend. The server runs on Express.js and listens on port `8001`.
 
 ## Technical Stack
 
@@ -29,7 +29,7 @@ To get started with this project, follow these steps:
    yarn start
    ```
 
-The server will start on port 8001.
+4. The server will start on port `8001`.
 
 ## Docker Support
 
