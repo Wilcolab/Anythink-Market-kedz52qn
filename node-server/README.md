@@ -42,7 +42,7 @@ To get started with this project, follow these steps:
    yarn start
    ```
 
-The server will start and listen on port 8001.
+- The Node.js server should now be running. You can access it at port `8001`.
 
 ## Docker
 
