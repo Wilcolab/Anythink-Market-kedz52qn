@@ -1,7 +1,8 @@
 const express = require('express');
-
+const routes = require('./routes');
 const app = express();
 
-// Middleware and other configurations can be set up here
+app.use(express.json());
+app.use('/', routes);
 
 module.exports = app;
