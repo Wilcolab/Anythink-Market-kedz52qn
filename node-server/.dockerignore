@@ -1,0 +1,13 @@
+# This file specifies files and directories to ignore when building the Docker image.
+node_modules
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.DS_Store
+.git
+.gitignore
+docker-compose.yml
+*.md
+*.lock
+src/**/*.test.js
+src/**/*.spec.js
